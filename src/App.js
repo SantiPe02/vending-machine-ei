@@ -10,7 +10,7 @@ function App() {
   return (
     <Grid container direction={"column"} alignContent={"center"} alignItems={'center'}>
       <Typography variant="h1" marginTop={2}>Vending Machine</Typography>
-      <Box display={'flex'} marginTop={5} sx={{ '& > *': { margin: '0 100px' } }}>
+      <Box display={'flex'} marginTop={5} sx={{ '& > *': { margin: '0 90px' } }}>
         <Aspirin />
         <Diphenhydramine />
         <Ibuprofen />

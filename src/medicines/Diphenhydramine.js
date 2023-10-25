@@ -1,13 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
 import diphenhydramine from "../resources/Diphenhydramine.jpeg";
 
 function Diphenhydramine() {
-  const [diphenhydramineStock, setDiphenhydramineStock] = useState([diphenhydramine]);
+  const [diphenhydramineStock, setDiphenhydramineStock] = useState([]);
+  const exampleJson = {
+    id: 5,
+    name: "Diphenhydramine",
+    price: 600,
+    stock: 1,
+  };
 
   const addStock = () => {
-    setDiphenhydramineStock([...diphenhydramineStock, diphenhydramine]);
+    const newAspirinStock = [];
+    for (let i = 0; i < exampleJson.stock; i++) {
+      newAspirinStock.push(diphenhydramine);
+    }
+    setDiphenhydramineStock(newAspirinStock);
   };
+
+  useEffect(() => {
+    addStock();
+  }, []);
 
   const deleteStock = () => {
     const newDiphenhydramineStock = [...diphenhydramineStock];
@@ -17,7 +31,8 @@ function Diphenhydramine() {
 
   return (
     <Grid container direction={"column"} alignItems={"center"}>
-      <Typography variant="h5">Diphenhydramine</Typography>
+      <Typography variant="h4" fontWeight='bold'>{exampleJson.name}</Typography>
+      <Typography variant="h6">Price: ${exampleJson.price}</Typography>
       <Box
         border={"1px solid #000"}
         height={500}
@@ -41,9 +56,6 @@ function Diphenhydramine() {
           ></img>
         ))}
       </Box>
-      <Button variant="contained" onClick={addStock}>
-        Add stock
-      </Button>
       <Button variant="contained" onClick={deleteStock} color="error">
         Delete Stock
       </Button>
