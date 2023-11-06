@@ -23,15 +23,11 @@ function Diphenhydramine() {
     addStock();
   }, []);
 
-  const deleteStock = () => {
-    const newDiphenhydramineStock = [...diphenhydramineStock];
-    newDiphenhydramineStock.pop();
-    setDiphenhydramineStock(newDiphenhydramineStock);
-  };
-
   return (
     <Grid container direction={"column"} alignItems={"center"}>
-      <Typography variant="h4" fontWeight='bold'>{exampleJson.name}</Typography>
+      <Typography variant="h4" fontWeight="bold">
+        {exampleJson.name}
+      </Typography>
       <Typography variant="h6">Price: ${exampleJson.price}</Typography>
       <Box
         border={"1px solid #000"}
@@ -56,9 +52,6 @@ function Diphenhydramine() {
           ></img>
         ))}
       </Box>
-      <Button variant="contained" onClick={deleteStock} color="error">
-        Delete Stock
-      </Button>
     </Grid>
   );
 }

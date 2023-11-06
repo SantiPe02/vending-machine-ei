@@ -23,12 +23,6 @@ function Ibuprofen() {
     addStock();
   }, []);
 
-  const deleteStock = () => {
-    const newIbuprofenStock = [...ibuprofenStock];
-    newIbuprofenStock.pop();
-    setIbuprofenStock(newIbuprofenStock);
-  };
-
   return (
     <Grid container direction={"column"} alignItems={"center"}>
       <Typography variant="h4" fontWeight='bold'>{exampleJson.name}</Typography>
@@ -56,9 +50,6 @@ function Ibuprofen() {
           ></img>
         ))}
       </Box>
-      <Button variant="contained" onClick={deleteStock} color="error">
-        Delete Stock
-      </Button>
     </Grid>
   );
 }

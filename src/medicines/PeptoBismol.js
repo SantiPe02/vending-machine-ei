@@ -24,12 +24,6 @@ function PeptoBismol() {
     addStock();
   }, []);
 
-  const deleteStock = () => {
-    const newPeptoBismolStock = [...peptoBismolStock];
-    newPeptoBismolStock.pop();
-    setPeptoBismolStock(newPeptoBismolStock);
-  };
-
   return (
     <Grid container direction={"column"} alignItems={"center"}>
       <Typography variant="h4" fontWeight='bold'>{exampleJson.name}</Typography>
@@ -57,9 +51,6 @@ function PeptoBismol() {
           ></img>
         ))}
       </Box>
-      <Button variant="contained" onClick={deleteStock} color="error">
-        Delete Stock
-      </Button>
     </Grid>
   );
 }

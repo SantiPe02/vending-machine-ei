@@ -1,23 +1,16 @@
 import "./App.css";
-import { Box, Grid, Typography } from "@mui/material";
-import Aspirin from "./medicines/Aspirin";
-import Diphenhydramine from "./medicines/Diphenhydramine";
-import Ibuprofen from "./medicines/Ibuprofen";
-import Paracetamol from "./medicines/Paracetamol";
-import PeptoBismol from "./medicines/PeptoBismol";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./home/HomePage";
+import PrevPage from "./startingPage/PrevPage";
 
 function App() {
   return (
-    <Grid container direction={"column"} alignContent={"center"} alignItems={'center'}>
-      <Typography variant="h1" marginTop={2}>Vending Machine</Typography>
-      <Box display={'flex'} marginTop={5} sx={{ '& > *': { margin: '0 90px' } }}>
-        <Aspirin />
-        <Diphenhydramine />
-        <Ibuprofen />
-        <Paracetamol />
-        <PeptoBismol />
-      </Box>
-    </Grid>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={PrevPage} />
+        <Route path="/vendingMachine/:machineId" Component={HomePage} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

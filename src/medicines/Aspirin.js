@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import aspirin from "../resources/aspirin.jpg";
 
@@ -22,12 +22,6 @@ function Aspirin() {
   useEffect(() => {
     addStock();
   }, []);
-
-  const deleteStock = () => {
-    const newAspirinStock = [...aspirinStock];
-    newAspirinStock.pop();
-    setAspirinStock(newAspirinStock);
-  };
 
   return (
     <Grid container direction={"column"} alignItems={"center"}>
@@ -56,9 +50,6 @@ function Aspirin() {
           ></img>
         ))}
       </Box>
-      <Button variant="contained" onClick={deleteStock} color="error">
-        Delete Stock
-      </Button>
     </Grid>
   );
 }

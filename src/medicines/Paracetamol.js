@@ -23,12 +23,6 @@ function Paracetamol() {
     addStock();
   }, []);
 
-  const deleteStock = () => {
-    const newParacetamolStock = [...paracetamolStock];
-    newParacetamolStock.pop();
-    setParacetamolStock(newParacetamolStock);
-  };
-
   return (
     <Grid container direction={"column"} alignItems={"center"}>
       <Typography variant="h4" fontWeight='bold'>{exampleJson.name}</Typography>
@@ -56,9 +50,6 @@ function Paracetamol() {
           ></img>
         ))}
       </Box>
-      <Button variant="contained" onClick={deleteStock} color="error">
-        Delete Stock
-      </Button>
     </Grid>
   );
 }
