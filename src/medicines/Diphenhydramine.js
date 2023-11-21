@@ -11,6 +11,13 @@ function Diphenhydramine() {
     stock: 1,
   };
 
+
+    const getData = async () => {
+        const response = await fetch(`http://localhost:8080/}`);
+        const data = await response.json();
+
+    }
+
   const addStock = () => {
     const newAspirinStock = [];
     for (let i = 0; i < exampleJson.stock; i++) {

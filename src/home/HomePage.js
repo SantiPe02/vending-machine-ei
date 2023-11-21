@@ -8,15 +8,15 @@ import PeptoBismol from '../medicines/PeptoBismol';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function HomePage() {
-    const machineId = useParams().machineId;
     const nav = useNavigate();
-    const goBackClick = () => {
-        nav(`/`);
-    };
+
+    const handleStatisticsClick = () => {
+        nav(`/statistics`);
+    }
 
     return (
         <Grid container direction={"column"} alignContent={"center"} alignItems={'center'}>
-          <Typography variant="h1" marginTop={2}>Vending Machine: {machineId}</Typography>
+          <Typography variant="h1" marginTop={2}>Vending Machine</Typography>
           <Typography variant="h4" marginTop={1}>Balance: </Typography>
           <Box display={'flex'} marginTop={5} sx={{ '& > *': { margin: '0 90px' } }}>
             <Aspirin />
@@ -25,7 +25,7 @@ function HomePage() {
             <Paracetamol />
             <PeptoBismol />
           </Box>
-          <Button variant='contained' sx={{marginTop: 5}} onClick={goBackClick}>go back</Button>
+          <Button variant='contained' sx={{marginTop: 5}} onClick={handleStatisticsClick}>Check statistics</Button>
         </Grid>
       );
 }
