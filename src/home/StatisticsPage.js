@@ -22,8 +22,24 @@ const StatisticsPage = () => {
         nav("/")
     }
 
+    const fetchData = async () => {
+        try {
+            const response = await fetch("http://localhost:8080/history/Vending Machine");
+            const data = await response.json();
+            setHistoryData(data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
+
     useEffect(() => {
-        setHistoryData(mockData);
+        fetchData();
+
+        const intervalId = setInterval(() => {
+            fetchData();
+        }, 1000);
+
+        return () => clearInterval(intervalId);
     }, []);
 
     const calculateTotalIncome = () => {
