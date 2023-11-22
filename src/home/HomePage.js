@@ -17,7 +17,7 @@ function HomePage() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch("http://localhost:8080/");
+            const response = await fetch("http://35.174.87.19:8080/");
             const data = await response.json();
 
             const vendingMachine = data[0];

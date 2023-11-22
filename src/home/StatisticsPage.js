@@ -24,7 +24,7 @@ const StatisticsPage = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch("http://localhost:8080/history/Vending Machine");
+            const response = await fetch("http://35.174.87.19:8080/history/Vending Machine");
             const data = await response.json();
             setHistoryData(data);
         } catch (error) {
